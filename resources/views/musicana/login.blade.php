@@ -12,10 +12,10 @@
     <title>One Music - Modern Music HTML5 Template</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="{{url('/')}}/Themes/img/core-img/favicon.ico">
+    <link rel="icon" href="{{url('/')}}/themes/img/core-img/favicon.ico">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="{{url('/')}}/Themes/style.css">
+    <link rel="stylesheet" href="{{url('/')}}/themes/style.css">
 
 </head>
 
@@ -33,7 +33,7 @@
     <!-- ##### Header Area Start ##### -->
     
     <!-- ##### Login Area End ##### -->
-<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(public/themes/img/bg-img/breadcumb3.jpg);">
+<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(https://img.freepik.com/free-photo/caucasian-woman-s-portrait-isolated-blue-background-multicolored-neon-light_155003-32526.jpg?size=626&ext=jpg&ga=GA1.1.520403329.1706177443&semt=sph);">
         <div class="bradcumbContent">
        
             <p>See what’s new</p>
@@ -84,15 +84,15 @@
 
     <!-- ##### All Javascript Script ##### -->
     <!-- jQuery-2.2.4 js -->
-    <script src="{{url('/')}}/Themes/js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="{{url('/')}}/themes/js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
-    <script src="{{url('/')}}/Themes/js/bootstrap/popper.min.js"></script>
+    <script src="{{url('/')}}/themes/js/bootstrap/popper.min.js"></script>
     <!-- Bootstrap js -->
-    <script src="{{url('/')}}/Themes/js/bootstrap/bootstrap.min.js"></script>
+    <script src="{{url('/')}}/themes/js/bootstrap/bootstrap.min.js"></script>
     <!-- All Plugins js -->
-    <script src="{{url('/')}}/Themes/js/plugins/plugins.js"></script>
+    <script src="{{url('/')}}/themes/js/plugins/plugins.js"></script>
     <!-- Active js -->
-    <script src="{{url('/')}}/Themes/js/active.js"></script>
+    <script src="{{url('/')}}/themes/js/active.js"></script>
 </body>
 
 </html>

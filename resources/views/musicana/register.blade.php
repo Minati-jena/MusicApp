@@ -34,7 +34,7 @@
       @include('musicana.header') 
     <!-- ##### Login Area End ##### -->
 
-<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb3.jpg);">
+<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(https://img.freepik.com/free-photo/caucasian-woman-s-portrait-isolated-blue-background-multicolored-neon-light_155003-32526.jpg?size=626&ext=jpg&ga=GA1.1.520403329.1706177443&semt=sph);">
         <div class="bradcumbContent">
        
             <p>See what’s new</p>

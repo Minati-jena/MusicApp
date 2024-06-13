@@ -19,10 +19,11 @@
     </style>
 </head>
 <body>
+
     <div class="container mt-5">
         <h2 class="text-center mb-4">List of Music({{$total}})</h2>
          <div class="d-flex justify-content-center mb-3">
-            <form class="form-inline" action="{{url('/')}}/musiclist" method="POST">
+            <form class="form-inline" action="" method="POST">
                 @csrf
                 <div class="input-group">
                     <input type="search" class="form-control" id="data" name="data" value="{{@$_POST['data']}}" placeholder="Search...">
@@ -32,7 +33,7 @@
                 </div>
             </form>
         </div>
-        <form id="musicForm" action="" method="POST">
+        <form id="musicForm" action="{{ url('/delete_selected_music') }}" method="POST">
             @csrf
             <table class="table table-bordered">
                 <thead class="thead-dark">
@@ -74,7 +75,7 @@
                 </tbody>
             </table>
             <div class="text-center mb-4">
-                <button type="button" class="btn btn-danger" id="deleteSelected">                            <a href="{{ url('/') }}/delete_music/{{ $data->id }}" class="btn btn-danger btn-sm" onclick="return ask()">Delete</a></button>
+                <button type="button" class="btn btn-danger" id="deleteSelected">Delete Selected</button>
                 <a href="{{ url('/') }}/addmusic" class="btn btn-primary">Add Music</a>
             </div>
         </form>

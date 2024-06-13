@@ -22,7 +22,7 @@
     <div class="container mt-5">
         <h2 class="text-center mb-4">List of Album ({{$total}})</h2>
        <div class="d-flex justify-content-center mb-3">
-            <form class="form-inline" action="" method="POST">
+            <form class="form-inline" action="" method="GET">
                 @csrf
                 <div class="input-group">
                     <input type="search" class="form-control" id="data" name="data" value="{{@$_POST['data']}}" placeholder="Search...">
@@ -51,17 +51,20 @@
                         } else {
                          $i = (@$_GET['page'] - 1) * 5; } ?>
                     @foreach($datas as $data)
+                    <?php
+                       $count = App\Models\Song::where('album_id', $data->id)->count();
+                    ?>
                     <tr>
                         <td><input type="checkbox" name="album_ids[]" value="{{ $data->id }}" class="selectSingle"></td>
 
                         <td>{{ ++$i }}</td>
-                        <td> <a href="{{url('/')}}/listofsong/{{$data->id}}"><img src="{{url('/')}}/photos/{{$data->photo}}" alt="{{$data->title}}" width="50" class="img-thumbnail"></a>
+                        <td> <a href="{{url('/')}}/listofsong/{{Crypt::encrypt($data->id)}}"><img src="{{url('/')}}/photos/{{$data->photo}}" alt="{{$data->title}}" width="50" class="img-thumbnail">({{$count}})</a>
                         </td>
                         <td>{{$data->title}}</td>
                         <td class="center">
-                            <button class="btn btn-primary btn-sm button-spacing"><a href="{{url('/')}}/edit_album/{{Crypt::encrypt($data->id)}}" class="text-white"><i class="fa-solid fa-pen-to-square"></i></a></button>
-
-                            <button class="btn btn-danger btn-sm button-spacing"><a href="{{url('/')}}/delete_album/{{$data->id}}" class="text-white" onclick="return ask();"><i class="fa-solid fa-trash"></i></a></button>
+                           <a href="{{ url('/') }}/edit_album/{{ Crypt::encrypt($data->id) }}" class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
+                           
+                            <a href="{{ url('/') }}/delete_album/{{ Crypt::encrypt($data->id)}}" class="btn btn-danger btn-sm" onclick="return ask()"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
                     @endforeach
@@ -79,6 +82,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
+        function ask() {
+            return confirm("Are you sure to delete?");
+        }
+
         $(document).ready(function() {
             $('#selectAll').click(function() {
                 $('.selectSingle').prop('checked', this.checked);
